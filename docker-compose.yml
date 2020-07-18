@@ -31,19 +31,19 @@ services:
   #    - BROWSER_NAME=chrome
 
   # Using Appium Docker Android  
-# real_device:
-#   image: appium/appium
-#   depends_on:
-#     - selenium_hub
-#   network_mode: "service:selenium_hub"
-#   privileged: true
-#   volumes:
-#     - /dev/bus/usb:/dev/bus/usb
-#     - ~/.android:/root/.android
-#     - $PWD/example/sample_apk:/root/tmp
-#   environment:
-#     - CONNECT_TO_GRID=true
-#     - SELENIUM_HOST=selenium_hub
+ real_device:
+   image: appium/appium
+   depends_on:
+     - selenium_hub
+   network_mode: "service:selenium_hub"
+   privileged: true
+   volumes:
+     - /dev/bus/usb:/dev/bus/usb
+     - ~/.android:/root/.android
+     - $PWD/example/sample_apk:/root/tmp
+   environment:
+     - CONNECT_TO_GRID=true
+     - SELENIUM_HOST=selenium_hub
      # Enable it for msite testing
       #- BROWSER_NAME=chrome
 
